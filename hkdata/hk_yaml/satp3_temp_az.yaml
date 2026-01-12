@@ -1,0 +1,41 @@
+hk_root: /scratch/gpfs/SIMONSOBS/so/tracked/data/satp3/hk/
+db_url:
+  #database: '/scratch/gpfs/SIMONSOBS/users/mfh2/work/250404/hkdb-satp3.db'
+  database: '/scratch/gpfs/SIMONSOBS/so/tracked/hkdb/250404/hkdb-satp3.db'
+  drivername: 'sqlite'
+aliases:
+    #az: 'acu.acu_udp_stream.Corrected_Azimuth'
+    #el: 'acu.acu_udp_stream.Corrected_Elevation'
+    fp: cryo-ls372-lsa2dtc.temperatures.Channel_01_T
+    mxc: cryo-ls372-lsa280e.temperatures.Channel_06_T
+    4K_filter: 'cryo-ls240-lsa25b7.temperatures.Channel_8_T'
+    40K_filter: 'cryo-ls240-lsa2k4g.temperatures.Channel_2_T'
+    URH_40K_plate: 'cryo-ls240-lsa266v.temperatures.Channel_5_T'
+    dr_still_stage_temp: 'cryo-ls372-lsa280e.temperatures.Channel_05_T'
+    1K-1: 'cryo-ls240-lsa2612.temperatures.Channel_1_T'
+    1K-2: 'cryo-ls240-lsa2612.temperatures.Channel_2_T'
+    1K-3: 'cryo-ls240-lsa2612.temperatures.Channel_3_T'
+    1K-4: 'cryo-ls240-lsa2612.temperatures.Channel_4_T'
+    1K-5: 'cryo-ls240-lsa2612.temperatures.Channel_5_T'
+    1K-10: 'cryo-ls240-lsa2612.temperatures.Channel_6_T'
+    1K-11: 'cryo-ls240-lsa2612.temperatures.Channel_7_T'
+    # PTC2(4K): https://site.simonsobs.org/grafana/d/ff99a9fa-707f-4fe7-8c06-09c94c0251b8/run-12-dashboard-rtmli-replacement?orgId=1&refresh=1m&viewPanel=3
+    D2.1: 'cryo-ls240-lsa266v.temperatures.Channel_7_T'
+    D2.2: 'cryo-ls240-lsa266v.temperatures.Channel_8_T'
+    D2.3: 'cryo-ls240-lsa266v.temperatures.Channel_1_T'
+    D2.4: 'cryo-ls240-lsa266v.temperatures.Channel_2_T'
+    D2.5: 'cryo-ls240-lsa266v.temperatures.Channel_3_T'
+    D2.6: 'cryo-ls240-lsa25b7.temperatures.Channel_4_T'
+    D2.7: 'cryo-ls240-lsa25b7.temperatures.Channel_7_T'
+    #D2.9: 'cryo-bluefors.temperatures.lakeshore_ch2_t'
+    DR_PTC2: 'cryo-ls372-lsa280e.temperatures.Channel_02_T'
+    # PTC1(40K): https://site.simonsobs.org/grafana/d/ff99a9fa-707f-4fe7-8c06-09c94c0251b8/run-12-dashboard-rtmli-replacement?orgId=1&refresh=1m&viewPanel=4
+    D1.1: 'cryo-ls240-lsa266v.temperatures.Channel_1_T'
+    D1.2: 'cryo-ls240-lsa266v.temperatures.Channel_2_T'
+    D1.3: 'cryo-ls240-lsa266v.temperatures.Channel_3_T'
+    D1.4: 'cryo-ls240-lsa266v.temperatures.Channel_4_T'
+    D1.5: 'cryo-ls240-lsa266v.temperatures.Channel_5_T'
+    D1.6: 'cryo-ls240-lsa266v.temperatures.Channel_5_T'
+    S2: 'cryo-ls240-lsa25b7.temperatures.Channel_8_T'
+    #D1.9: 'cryo-bluefors.temperatures.lakeshore_ch1_t' #(DR_PTC1_CH_D)
+    DR_PTC1_CH: 'cryo-ls372-lsa280e.temperatures.Channel_01_T'
