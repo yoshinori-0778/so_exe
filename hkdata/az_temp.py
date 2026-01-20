@@ -166,7 +166,7 @@ def exe_azbin(ctx, iobs, hkcfg_path = '/home/ys5857/workspace/script/so_exe/hkda
     
     del aman, res
 
-def get_obsids(ctx, ys = 2024, ms = 1, ye = 2024, me = 2):
+def get_obsids(ctx, ys = 2024, ms = 1, ye = 2024, me = 2, overwrite = False, saved ='/scratch/gpfs/SIMONSOBS/users/ys5857/workspace/output/az_temp/satp3/'):
     """Get observation IDs within given time range.
     Parameters:
     - ctx: sotodlib core context
@@ -184,8 +184,19 @@ def get_obsids(ctx, ys = 2024, ms = 1, ye = 2024, me = 2):
     for iobs in obslist:
         if ctx.obsdb.get(iobs['obs_id'], tags=True)['subtype'] == 'cmb':
             obss.append(iobs['obs_id'])
-    print(f'{scan_start} - {scan_stop}: #obs = {len(obss)}')
-    return np.array(obss)
+    print(f'{scan_start} - {scan_stop}: # all obs = {len(obss)}')
+
+    if not overwrite:
+        obss_new = []
+        for iobs in obss:
+            savep = os.path.join(saved, f'{iobs}.pkl')
+            if not os.path.exists(savep):
+                obss_new.append(iobs)
+        print(f'Overwrite is set to False, # all obs = {len(obss_new)}')
+    else:
+        obss_new = obss
+        print('Overwrite is set to True, all obs will be processed again even if the file already exists.')
+    return np.array(obss_new)
 
 def main(ctx, ys = 2024, ms = 1, ye = 2024, me = 2,
          hkcfg_path = '/home/ys5857/workspace/script/so_exe/hkdata/hk_yaml/satp3_temp_az.yaml',
@@ -219,12 +230,12 @@ if __name__ == '__main__':
             hkcfg_path = '/home/ys5857/workspace/script/so_exe/hkdata/hk_yaml/satp3_temp_az.yaml'
             ctx_path3 = '/home/ys5857/workspace/script/so_exe/hkdata/contexts/satp3_contexts_20260109.yaml'
             ctx = core.Context(ctx_path3)
-            saved ='/scratch/gpfs/SIMONSOBS/users/ys5857/workspace/output/az_temp/{args.sat}/'
+            saved = f'/scratch/gpfs/SIMONSOBS/users/ys5857/workspace/output/az_temp/{args.sat}/'
         elif args.sat == 'satp1':
             hkcfg_path = '/home/ys5857/workspace/script/so_exe/hkdata/hk_yaml/satp1_temp_az.yaml'
             ctx_path1 = '/home/ys5857/workspace/script/so_exe/hkdata/contexts/satp1_contexts_20260109.yaml'
             ctx = core.Context(ctx_path1)
-            saved ='/scratch/gpfs/SIMONSOBS/users/ys5857/workspace/output/az_temp/{args.sat}/'
+            saved = f'/scratch/gpfs/SIMONSOBS/users/ys5857/workspace/output/az_temp/{args.sat}/'
         else:
             raise ValueError('Platform not recognized, please use satp1 or satp3')
 
@@ -249,6 +260,18 @@ if __name__ == '__main__':
             [2024,11,2024,12],
             [2024,12,2025,1],
             [2025,1,2025,2],
+            [2025,2,2025,3],
+            [2025,3,2025,4],
+            [2025,4,2025,5],
+            [2025,5,2025,6],
+            [2025,6,2025,7],
+            [2025,7,2025,8],
+            [2025,8,2025,9],
+            [2025,9,2025,10],
+            [2025,10,2025,11],
+            [2025,11,2025,12],
+            [2025,12,2026,1],
+            [2025,1,2026,2],
             ]
         for ys, ms, ye, me in div_set:
             print(ys, ms, ye, me)

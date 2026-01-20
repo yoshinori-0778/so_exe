@@ -45,10 +45,10 @@ metadata:
     label: hwp_solution
     unpack:
     - 'hwp_solution'
-  - db: '{manifestdir}/abscal/satp1_abscal_250827r2/db_local.sqlite'
-    label: abscal
-    unpack:
-    - abscal
+  #- db: '{manifestdir}/abscal/satp1_abscal_250827r2/db_local.sqlite'
+  #  label: abscal
+  #  unpack:
+  #  - abscal
   - db: '{manifestdir}/wobble/satp1_wobble_251104r1/wobble_params_local.sqlite'
     label: wobble_params
     unpack:
