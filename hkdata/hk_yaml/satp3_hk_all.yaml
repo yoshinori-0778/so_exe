@@ -1,0 +1,149 @@
+hk_root: /scratch/gpfs/SIMONSOBS/so/tracked/data/satp3/hk/
+db_url:
+  #database: '/scratch/gpfs/SIMONSOBS/users/mfh2/work/250404/hkdb-satp3.db'
+  database: '/scratch/gpfs/SIMONSOBS/so/tracked/hkdb/250404/hkdb-satp3.db'
+  drivername: 'sqlite'
+aliases:
+    az: 'acu.acu_udp_stream.Corrected_Azimuth'
+    el: 'acu.acu_udp_stream.Corrected_Elevation'
+    bs: 'acu.acu_udp_stream.Corrected_Boresight'
+    #fp: cryo-ls372-lsa2dtc.temperatures.Channel_01_T
+    #mc: cryo-ls372-lsa280e.temperatures.Channel_06_T
+    # 4K, HWP: https://site.simonsobs.org/grafana/d/ff99a9fa-707f-4fe7-8c06-09c94c0251b8/run-12-dashboard-rtmli-replacement?orgId=1&refresh=1m&viewPanel=5
+    4K_filter: 'cryo-ls240-lsa25b7.temperatures.Channel_8_T'
+    YBCO: 'cryo-ls240-lsa2k4g.temperatures.Channel_1_T'
+    40K_filter: 'cryo-ls240-lsa2k4g.temperatures.Channel_2_T'
+    URH_40K_plate: 'cryo-ls240-lsa266v.temperatures.Channel_5_T'
+    # 100mK: https://site.simonsobs.org/grafana/d/db362477-340a-42e2-bc43-8ab8fba9c91a/overview-dashboard?orgId=1&from=now-1h&to=now&refresh=5s&viewPanel=10
+    fp: 'cryo-ls372-lsa2dtc.temperatures.Channel_01_T'
+    dr_mxc: 'cryo-ls372-lsa280e.temperatures.Channel_06_T'
+    fpb5: 'cryo-ls372-lsa2dtc.temperatures.control_T'
+    100mK-1: 'cryo-ls372-lsa22ye.temperatures.Channel_01_T'
+    100mK-2: 'cryo-ls372-lsa22ye.temperatures.Channel_02_T'
+    100mK-3: 'cryo-ls372-lsa22ye.temperatures.Channel_03_T'
+    100mK-4: 'cryo-ls372-lsa22ye.temperatures.Channel_04_T'
+    100mK-5: 'cryo-ls372-lsa22ye.temperatures.Channel_05_T'
+    # 1K: https://site.simonsobs.org/grafana/d/ff99a9fa-707f-4fe7-8c06-09c94c0251b8/run-12-dashboard-rtmli-replacement?orgId=1&refresh=1m&viewPanel=2
+    #dr_still_stage: 'cryo-bluefors.temperatures.lakeshore_ch5_t'
+    dr_still_stage_temp: 'cryo-ls372-lsa280e.temperatures.Channel_05_T'
+    1K-1: 'cryo-ls240-lsa2612.temperatures.Channel_1_T'
+    1K-2: 'cryo-ls240-lsa2612.temperatures.Channel_2_T'
+    1K-3: 'cryo-ls240-lsa2612.temperatures.Channel_3_T'
+    1K-4: 'cryo-ls240-lsa2612.temperatures.Channel_4_T'
+    1K-5: 'cryo-ls240-lsa2612.temperatures.Channel_5_T'
+    1K-10: 'cryo-ls240-lsa2612.temperatures.Channel_6_T'
+    1K-11: 'cryo-ls240-lsa2612.temperatures.Channel_7_T'
+    # PTC2(4K): https://site.simonsobs.org/grafana/d/ff99a9fa-707f-4fe7-8c06-09c94c0251b8/run-12-dashboard-rtmli-replacement?orgId=1&refresh=1m&viewPanel=3
+    D2.1: 'cryo-ls240-lsa266v.temperatures.Channel_7_T'
+    D2.2: 'cryo-ls240-lsa266v.temperatures.Channel_8_T'
+    D2.3: 'cryo-ls240-lsa266v.temperatures.Channel_1_T'
+    D2.4: 'cryo-ls240-lsa266v.temperatures.Channel_2_T'
+    D2.5: 'cryo-ls240-lsa266v.temperatures.Channel_3_T'
+    D2.6: 'cryo-ls240-lsa25b7.temperatures.Channel_4_T'
+    D2.7: 'cryo-ls240-lsa25b7.temperatures.Channel_7_T'
+    #D2.9: 'cryo-bluefors.temperatures.lakeshore_ch2_t'
+    DR_PTC2: 'cryo-ls372-lsa280e.temperatures.Channel_02_T'
+    # PTC1(40K): https://site.simonsobs.org/grafana/d/ff99a9fa-707f-4fe7-8c06-09c94c0251b8/run-12-dashboard-rtmli-replacement?orgId=1&refresh=1m&viewPanel=4
+    D1.1: 'cryo-ls240-lsa266v.temperatures.Channel_1_T'
+    D1.2: 'cryo-ls240-lsa266v.temperatures.Channel_2_T'
+    D1.3: 'cryo-ls240-lsa266v.temperatures.Channel_3_T'
+    D1.4: 'cryo-ls240-lsa266v.temperatures.Channel_4_T'
+    D1.5: 'cryo-ls240-lsa266v.temperatures.Channel_5_T'
+    D1.6: 'cryo-ls240-lsa266v.temperatures.Channel_5_T'
+    S2: 'cryo-ls240-lsa25b7.temperatures.Channel_8_T'
+    #D1.9: 'cryo-bluefors.temperatures.lakeshore_ch1_t' #(DR_PTC1_CH_D)
+    DR_PTC1_CH: 'cryo-ls372-lsa280e.temperatures.Channel_01_T'
+
+    # HWP things
+    hwp_freq1: 'hwp-bbb-a1.HWPEncoder.approx_hwp_freq'
+    hwp_freq2: 'hwp-bbb-a2.HWPEncoder.approx_hwp_freq'
+    hwp_driver_cur: 'hwp-pmx.hwppmx.current'
+    hwp_driver_vol: 'hwp-pmx.hwppmx.voltage'
+
+    # Housekeeping and CHWP warm thermometry: https://site.simonsobs.org/grafana/d/mDBuIOQ7k/tsat-housekeeping?orgId=1&refresh=1m&viewPanel=24
+    hwp_enc_tr: 'labjack-abob2.sensors.AIN98c' # HWP enclosure top right
+    hwp_enc_pid: 'labjack-abob2.sensors.AIN96c' # HWP Enclosure PID Controller
+    house_enc: 'labjack-abob2.sensors.AIN100c' # (Housekeeping Enclosure
+
+    # SMuRF enclosure warm thermometers: https://site.simonsobs.org/grafana/d/mDBuIOQ7k/tsat-housekeeping?orgId=1&refresh=1m&viewPanel=12
+    smurf_ex: 'labjack-abob2.sensors.AIN106c' # SMuRF Exhaust
+    smurf_in: 'labjack-abob2.sensors.AIN108c' # SMuRF Intake
+    smurf_fr: 'labjack-abob2.sensors.AIN104c' # Inside ATCA, front right
+    smurf_fl: 'labjack-abob2.sensors.AIN102c' # Inside ATCA, front left
+
+    # FPGA Temperature - Pysmurf Monitor: https://site.simonsobs.org/grafana/d/mDBuIOQ7k/tsat-housekeeping?orgId=1&refresh=1m&viewPanel=30
+    mv5: 'det-monitor-so10.ufm_mv5_meta.AMCcFpgaTopLevelAmcCarrierCoreAxiSysMonUltraScaleTemperature'
+    mv17: 'det-monitor-so10.ufm_mv17_meta.AMCcFpgaTopLevelAmcCarrierCoreAxiSysMonUltraScaleTemperature'
+    mv33: 'det-monitor-so10.ufm_mv33_meta.AMCcFpgaTopLevelAmcCarrierCoreAxiSysMonUltraScaleTemperature'
+    mv12: 'det-monitor-so4.ufm_mv12_meta.AMCcFpgaTopLevelAmcCarrierCoreAxiSysMonUltraScaleTemperature'
+    mv27: 'det-monitor-so4.ufm_mv27_meta.AMCcFpgaTopLevelAmcCarrierCoreAxiSysMonUltraScaleTemperature'
+    mv35: 'det-monitor-so4.ufm_mv35_meta.AMCcFpgaTopLevelAmcCarrierCoreAxiSysMonUltraScaleTemperature'
+    mv23: 'det-monitor-so4.ufm_mv23_meta.AMCcFpgaTopLevelAmcCarrierCoreAxiSysMonUltraScaleTemperature'
+
+    #Compressor Temp Data: https://site.simonsobs.org/grafana/d/db362477-340a-42e2-bc43-8ab8fba9c91a/overview-dashboard?orgId=1&refresh=5s&viewPanel=17
+    dr_helium: 'cryo-ptc-dr.ptc_status.Helium_Temp' # DR Helium Temp
+    dr_oil: 'cryo-ptc-dr.ptc_status.Oil_Temp' # DR_ptc Oil Temperature
+    dr_water_in: 'cryo-ptc-dr.ptc_status.Coolant_In_Temp' # DR_ptc Water Inlet
+    dr_water_out: 'cryo-ptc-dr.ptc_status.Coolant_Out_Temp' # DR_ptc Water Outlet
+    ptc_helium: 'cryo-ptc-sat.ptc_status.Helium_Temp' # cryostat_ptc Helium Temp
+    ptc_oil: 'cryo-ptc-sat.ptc_status.Oil_Temp' # cryostat_ptc Oil Temp
+    ptc_water_in: 'cryo-ptc-sat.ptc_status.Coolant_In_Temp' # cryostat_ptc Water Inlet
+    ptc_water_out: 'cryo-ptc-sat.ptc_status.Coolant_Out_Temp' # cryostat_ptc Water Outlet
+
+    #Azimuth Motor Currents: https://site.simonsobs.org/grafana/d/db362477-340a-42e2-bc43-8ab8fba9c91a/overview-dashboard?orgId=1&refresh=5s&viewPanel=43
+    # Cannot read
+    #az_cur1: 'acu.acu_udp_stream.Azimuth_Current_1_bcast_influx' # Az Motor 1 Current
+    #az_cur2: 'acu.acu_udp_stream.Azimuth_Current_1_bcast_influx' # Az Motor 2 Current
+
+
+    # Mixture Tank External Thermometers: https://site.simonsobs.org/grafana/d/mDBuIOQ7k/tsat-housekeeping?orgId=1&refresh=1m&viewPanel=2
+    # (T*_1 - T*_2)*120.048
+    T1_1: 'labjack-abob1.sensors.AIN113V' # Thermometer 1 (middle tank top)
+    T1_2: 'labjack-abob1.sensors.AIN121V' # Thermometer 1 (middle tank top)
+    T2_1: 'labjack-abob1.sensors.AIN114V' # Thermometer 2 (middle tank middle)
+    T2_2: 'labjack-abob1.sensors.AIN122V' # Thermometer 2 (middle tank middle)
+    T3_1: 'labjack-abob1.sensors.AIN115V' # Thermometer 3 (middle tank bottom)
+    T3_2: 'labjack-abob1.sensors.AIN123V' # Thermometer 3 (middle tank bottom)
+    T4_1: 'labjack-abob1.sensors.AIN116V' # Thermometer 4 (Right Tank Bottom)
+    T4_2: 'labjack-abob1.sensors.AIN124V' # Thermometer 4 (Right Tank Bottom)
+    T5_1: 'labjack-abob1.sensors.AIN117V' # Thermometer 5 (Left Tank Bottom)
+    T5_2: 'labjack-abob1.sensors.AIN125V' # Thermometer 5 (Left Tank Bottom)
+
+    # inclinometer: https://site.simonsobs.org/grafana/d/mDBuIOQ7k/tsat-housekeeping?orgId=1&refresh=1m&viewPanel=6
+    # (incl_*1 - incl_*1)
+    incl_X1: 'labjack-abob1.sensors.AIN68V'
+    incl_X2: 'labjack-abob1.sensors.AIN76V'
+    incl_Y1: 'labjack-abob1.sensors.AIN70V'
+    incl_Y2: 'labjack-abob1.sensors.AIN78V'
+
+    # Magnetrometer: https://site.simonsobs.org/grafana/d/ValBpav7k/fast-diodes-2b-magnetometer?orgId=1&from=now-24h&to=now&viewPanel=14
+    # Mag-03_B*1 - Mag-03_B*2
+    Mag-03_Bx1: 'labjack-abob1.sensors.AIN97V'
+    Mag-03_Bx2: 'labjack-abob1.sensors.AIN105V'
+    Mag-03_By1: 'labjack-abob1.sensors.AIN98V'
+    Mag-03_By2: 'labjack-abob1.sensors.AIN106V'
+    Mag-03_Bz1: 'labjack-abob1.sensors.AIN96V'
+    Mag-03_Bz2: 'labjack-abob1.sensors.AIN104V'
+
+    ## https://site.simonsobs.org/grafana/d/ValBpav7k/fast-diodes-2b-magnetometer?orgId=1&from=now-24h&to=now&viewPanel=10
+    # Mag-13_B*1 - Mag-13_B*2
+    Mag-13_By1: 'labjack-abob1.sensors.AIN55V'
+    Mag-13_By2: 'labjack-abob1.sensors.AIN63V'
+    Mag-13_Bz1: 'labjack-abob1.sensors.AIN49V'
+    Mag-13_Bz2: 'labjack-abob1.sensors.AIN57V'
+
+    ## https://site.simonsobs.org/grafana/d/ValBpav7k/fast-diodes-2b-magnetometer?orgId=1&from=now-24h&to=now&viewPanel=12
+    Cryo_Max_Bz1: 'labjack-abob1.sensors.AIN102V'
+    Cryo_Max_Bz2: 'labjack-abob1.sensors.AIN110V'
+
+    # accelerometer:https://site.simonsobs.org/grafana/d/mDBuIOQ7k/tsat-housekeeping?orgId=1&refresh=1m&viewPanel=22
+    #az_acc: 'acu.acu_udp_stream.Azimuth_current_position_influx' # cannot read sofar
+    Accl_X: 'labjack-abob2.sensors.AIN80V'
+    Accl_Y: 'labjack-abob2.sensors.AIN81V'
+    Accl_Z: 'labjack-abob2.sensors.AIN82V'
+
+    # Coil Drive: https://site.simonsobs.org/grafana/d/ValBpav7k/fast-diodes-2b-magnetometer?orgId=1&from=now-24h&to=now&viewPanel=6
+    #
+
+    # Pressure inside cryostat: https://site.simonsobs.org/grafana/d/db362477-340a-42e2-bc43-8ab8fba9c91a/overview-dashboard?orgId=1&from=now-5m&to=now&refresh=5s&viewPanel=19
+    MX7: 'labjack-abob2.sensors.AIN77V' # exp(ln(10)*floor(mean("AIN77V")-11)) * (mean("AIN77V")%1)

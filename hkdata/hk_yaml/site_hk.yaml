@@ -1,0 +1,11 @@
+hk_root: /scratch/gpfs/SIMONSOBS/so/tracked/data/site/hk/
+db_url:
+  #database: '/scratch/gpfs/SIMONSOBS/users/mfh2/work/250404/hkdb-site.db'
+  database: '/scratch/gpfs/SIMONSOBS/so/tracked/hkdb/250404/hkdb-site.db'
+  drivername: 'sqlite'
+aliases:
+  # thermometer
+  outsite_temp: 'env-vantage.weather_data.temp_outside'
+  # pwv class
+  pwv_class: 'env-radiometer-class.pwvs.pwv'
+  # pwv apex

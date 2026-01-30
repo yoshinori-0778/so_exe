@@ -1,0 +1,49 @@
+hk_root: /scratch/gpfs/SIMONSOBS/so/tracked/data/satp1/hk/
+db_url:
+  database: '/scratch/gpfs/SIMONSOBS/so/tracked/hkdb/250404/hkdb-satp1.db'
+  drivername: 'sqlite'
+aliases:
+    az: 'acu.acu_udp_stream.Corrected_Azimuth'
+    el: 'acu.acu_udp_stream.Corrected_Elevation'
+    bs: 'acu.acu_udp_stream.Corrected_Boresight'
+    # 100mK: https://site.simonsobs.org/grafana/d/a8839fa5-a8b9-4ea3-90bb-5d122fd311b7/sat-mf1-cryo-temperatures?orgId=1&from=now-5m&to=now&timezone=utc&refresh=5s&editPanel=11
+    fp: 'cryo-ls372-lsa21yc.temperatures.Channel_02_T' # https://site.simonsobs.org/grafana/d/a8839fa5-a8b9-4ea3-90bb-5d122fd311b7/sat-mf1-cryo-temperatures?orgId=1&from=now-1y&to=now&timezone=utc&refresh=5s&editPanel=11
+    dr_mxc: 'cryo-ls372-lsa22qc.temperatures.Channel_06_T' # https://site.simonsobs.org/grafana/d/a8839fa5-a8b9-4ea3-90bb-5d122fd311b7/sat-mf1-cryo-temperatures?orgId=1&from=now-30m&to=now&timezone=utc&refresh=5s&editPanel=4
+    #hs_rod: 'cryo-ls372-lsa21yc.temperatures.Channel_01_T'
+    #fpa_opp_heater: 'cryo-ls372-lsa21yc.temperatures.Channel_03_T'
+    #central_ufm: 'cryo-ls372-lsa21yc.temperatures.Channel_04_T'
+    #fpa_opp_hs: 'cryo-ls372-lsa21yc.temperatures.Channel_05_T'
+    heater_old: 'cryo-ls372-lsa21yc.temperatures.sample_heater_out'
+    heater: 'cryo-ls372-lsa21yc.temperatures.sample_heater_output'
+    # still temp: https://site.simonsobs.org/grafana/d/a8839fa5-a8b9-4ea3-90bb-5d122fd311b7/sat-mf1-cryo-temperatures?orgId=1&from=now-30m&to=now&timezone=utc&refresh=5s&viewPanel=panel-18
+    cra: 'cryo-ls240-lsa2jj7.temperatures.Channel_1_T'
+    stop: 'cryo-ls240-lsa2jj7.temperatures.Channel_2_T'
+    lpe: 'cryo-ls240-lsa2jj7.temperatures.Channel_4_T'
+    lens2: 'cryo-ls240-lsa2jj7.temperatures.Channel_5_T'
+    #hs_rod: 'cryo-ls240-lsa2jj7.temperatures.Channel_6_T'
+    hs_double_rod: 'cryo-ls240-lsa2jj7.temperatures.Channel_7_T'
+    # PTC2: https://site.simonsobs.org/grafana/d/a8839fa5-a8b9-4ea3-90bb-5d122fd311b7/sat-mf1-cryo-temperatures?orgId=1&from=now-30m&to=now&timezone=utc&refresh=5s&viewPanel=panel-17
+    #be_ot: 'cryo-ls240-lsa231c.temperatures.Channel_2_T'
+    4K_urh: 'cryo-ls240-lsa231c.temperatures.Channel_3_T'
+    #cra_dr_side: 'cryo-ls240-lsa231c.temperatures.Channel_4_T'
+    #cra_other_side: 'cryo-ls240-lsa231c.temperatures.Channel_5_T'
+    4K_coldhead: 'cryo-ls240-lsa231c.temperatures.Channel_6_T'
+    4K_filter: 'cryo-ls240-lsa2619.temperatures.Channel_6_T'
+    # PTC1(40K): https://site.simonsobs.org/grafana/d/a8839fa5-a8b9-4ea3-90bb-5d122fd311b7/sat-mf1-cryo-temperatures?orgId=1&from=now-30m&to=now&timezone=utc&refresh=5s&viewPanel=panel-13
+    heatstrap: 'cryo-ls240-lsa231c.temperatures.Channel_7_T'
+    #be_ot: 'cryo-ls240-lsa231c.temperatures.Channel_8_T'
+    40K_urh: 'cryo-ls240-lsa2619.temperatures.Channel_1_T'
+    be_dr_port: 'cryo-ls240-lsa2619.temperatures.Channel_2_T'
+    busbar: 'cryo-ls240-lsa2619.temperatures.Channel_3_T'
+    40K_coldhead: 'cryo-ls240-lsa2619.temperatures.Channel_4_T'
+    filter_plate: 'cryo-ls240-lsa2619.temperatures.Channel_5_T'
+    chwp_ybco: 'cryo-ls240-lsa2619.temperatures.Channel_7_T'
+    chwp_rotor1: 'cryo-ls240-lsa2619.temperatures.Channel_8_T'
+    chwp_rotor2: 'cryo-ls240-lsa21us.temperatures.Channel_1_T'
+    chwp_rotor3: 'cryo-ls240-lsa21us.temperatures.Channel_2_T'
+
+    # HWP things
+    #hwp_freq1: 'hwp-bbb-a1.HWPEncoder.approx_hwp_freq'
+    #hwp_freq2: 'hwp-bbb-a2.HWPEncoder.approx_hwp_freq'
+    hwp_driver_cur: 'hwp-pmx.hwppmx.current'
+    hwp_driver_vol: 'hwp-pmx.hwppmx.voltage'

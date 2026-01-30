@@ -1,0 +1,8 @@
+hk_root: /scratch/gpfs/SIMONSOBS/so/tracked/data/satp1/hk/
+db_url:
+  database: '/scratch/gpfs/SIMONSOBS/so/tracked/hkdb/250404/hkdb-satp1.db'
+  drivername: 'sqlite'
+aliases:
+    heater_old: 'cryo-ls372-lsa21yc.temperatures.sample_heater_out' # old
+    heater: 'cryo-ls372-lsa21yc.temperatures.sample_heater_output' # new
+    
