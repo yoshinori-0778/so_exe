@@ -4,14 +4,14 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --time=24:00:00
+#SBATCH --time=48:00:00
 #SBATCH --mem=20GB
-#SBATCH --job-name=az_temp_satp1_260130 # Name of the job
+#SBATCH --job-name=az_temp_satp1_260131 # Name of the job
 #SBATCH --mail-type=end,fail
 #SBATCH --mail-user=ys5857@princeton.edu
 
 # Log file for capturing the output of the script
-log="./logs/az_temp_satp1_260130.log"
+log="./logs/az_temp_satp1_260131.log"
 
 #=========== Compute runtime parameters ============
 echo "Using ${NODES} node(s), which have ${NODE_SLOTS} thread slots each."
