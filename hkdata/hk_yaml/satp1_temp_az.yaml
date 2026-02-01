@@ -12,8 +12,8 @@ aliases:
     #fpa_opp_heater: 'cryo-ls372-lsa21yc.temperatures.Channel_03_T'
     #central_ufm: 'cryo-ls372-lsa21yc.temperatures.Channel_04_T'
     #fpa_opp_hs: 'cryo-ls372-lsa21yc.temperatures.Channel_05_T'
-    heater_old: 'cryo-ls372-lsa21yc.temperatures.sample_heater_out'
-    heater: 'cryo-ls372-lsa21yc.temperatures.sample_heater_output'
+    #heater_old: 'cryo-ls372-lsa21yc.temperatures.sample_heater_out'
+    #heater: 'cryo-ls372-lsa21yc.temperatures.sample_heater_output'
     # still temp: https://site.simonsobs.org/grafana/d/a8839fa5-a8b9-4ea3-90bb-5d122fd311b7/sat-mf1-cryo-temperatures?orgId=1&from=now-30m&to=now&timezone=utc&refresh=5s&viewPanel=panel-18
     cra: 'cryo-ls240-lsa2jj7.temperatures.Channel_1_T'
     stop: 'cryo-ls240-lsa2jj7.temperatures.Channel_2_T'
@@ -23,7 +23,7 @@ aliases:
     hs_double_rod: 'cryo-ls240-lsa2jj7.temperatures.Channel_7_T'
     # PTC2: https://site.simonsobs.org/grafana/d/a8839fa5-a8b9-4ea3-90bb-5d122fd311b7/sat-mf1-cryo-temperatures?orgId=1&from=now-30m&to=now&timezone=utc&refresh=5s&viewPanel=panel-17
     #be_ot: 'cryo-ls240-lsa231c.temperatures.Channel_2_T'
-    4K_urh: 'cryo-ls240-lsa231c.temperatures.Channel_3_T'
+    #4K_urh: 'cryo-ls240-lsa231c.temperatures.Channel_3_T'
     #cra_dr_side: 'cryo-ls240-lsa231c.temperatures.Channel_4_T'
     #cra_other_side: 'cryo-ls240-lsa231c.temperatures.Channel_5_T'
     4K_coldhead: 'cryo-ls240-lsa231c.temperatures.Channel_6_T'
