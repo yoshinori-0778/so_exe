@@ -5,13 +5,13 @@
 #SBATCH --ntasks=14
 #SBATCH --cpus-per-task=4
 #SBATCH --time=12:00:00
-#SBATCH --mem=600GB
+#SBATCH --mem=50GB
 #SBATCH --job-name=vel_accl_satp1_multiprocess_260202 # Name of the job
 #SBATCH --mail-type=end,fail
 #SBATCH --mail-user=ys5857@princeton.edu
 
 # Log file for capturing the output of the script
-log="./vel_accl_satp1_multiprocess_260202.log"
+log=".log/vel_accl_satp1_multiprocess_260202.log"
 
 #=========== Compute runtime parameters ============
 echo "Using ${NODES} node(s), which have ${NODE_SLOTS} thread slots each."
