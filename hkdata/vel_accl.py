@@ -4,6 +4,7 @@ import datetime
 import sys, os
 from tqdm import tqdm
 from scipy.interpolate import interp1d
+from scipy.signal import butter, filtfilt
 
 from sotodlib import core, tod_ops
 from sotodlib.io import hkdb
@@ -12,7 +13,63 @@ from sotodlib.utils.procs_pool import get_exec_env
 sys.path.append('/home/ys5857/workspace/script/so_ana/')
 from config import *
 from util.misc import save_pkl
-from util.misc import get_vel_accl
+
+
+def lowpass_filter_tod(tod, sample_rate, cutoff_hz, order=4):
+    """
+    Apply a Butterworth low-pass filter to TOD.
+
+    Parameters
+    ----------
+    tod : array-like
+        Time-ordered data (1D array)
+    sample_rate : float
+        Sampling rate in Hz
+    cutoff_hz : float
+        Cutoff frequency of the low-pass filter in Hz
+    order : int, optional
+        Order of the Butterworth filter (default=4)
+
+    Returns
+    -------
+    filtered_tod : ndarray
+        Filtered TOD
+    """
+
+    nyquist = 0.5 * sample_rate
+    normal_cutoff = cutoff_hz / nyquist
+
+    # Butterworth filter design
+    b, a = butter(order, normal_cutoff, btype='low', analog=False)
+    
+    # Zero-phase filtering (no phase shift)
+    filtered_tod = filtfilt(b, a, tod)
+
+    return filtered_tod
+
+def get_vel_accl(ctx, obsid, platform = 'satp3'):
+    # Should be a way to get commanded vel and accl
+    hkdb_file = f'/scratch/gpfs/SIMONSOBS/so/tracked/hkdb/250404/hkdb-{platform}.cfg'
+    cfg = hkdb.HkConfig.from_yaml(hkdb_file)
+    
+    iobslist = ctx.obsdb.get(obsid)
+    t0 = iobslist['timestamp'] + 120
+    t1 = iobslist['timestamp'] + 240
+    lspec = hkdb.LoadSpec(
+        cfg=cfg, start=t0, end=t1,
+        #fields=['acu.*.*'],
+        fields=['acu.acu_udp_stream.Corrected_Azimuth'],
+    )
+    res = hkdb.load_hk(lspec)
+    its, iaz = res.data['acu.acu_udp_stream.Corrected_Azimuth']
+    
+    sampling_interval = np.median(np.diff(its))
+    azvel = np.round(np.median(np.abs(np.diff(iaz))/sampling_interval), 2)
+    
+    deriv2 = np.diff(np.diff(iaz))
+    filtered = lowpass_filter_tod(deriv2, sample_rate=1/sampling_interval, cutoff_hz=1)
+    azaccl = np.round(np.max(np.abs(filtered/sampling_interval**2))/3.7, 2) # 3.7 is approximation, not exact one.
+    return azvel, azaccl
 
 def main(obsid):
     ctx1 = core.Context(CTX_PATH1)
