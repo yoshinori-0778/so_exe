@@ -79,6 +79,10 @@ def main(obsid):
     save_pkl((azvel,azacl), f'/scratch/gpfs/SIMONSOBS/users/ys5857/workspace/output/vel_accl/{platform}/{obsid}.pkl')
     return
 
+def test():
+    obsid = 'obs_1723420328_satp1_1111111'
+    main(obsid)
+
 
 def main_multiprocess(executor, as_completed_callable, ctx, ys, ms, ye, me, platform):
     scan_start = datetime.datetime(ys, ms, 1, 0, 0, 0, 0, tzinfo=datetime.timezone.utc)
@@ -127,21 +131,26 @@ if __name__ == '__main__':
     parser.add_argument('me', type=int)
     parser.add_argument('--sat', type=str, default='satp1', help='Start year for analysis')
     parser.add_argument('--nproc', type=int, default=2, help='Number of processes to use')
+    parser.add_argument('--test', action='store_true', help='Test mode with single process')
     args = parser.parse_args()
     rank, executor, as_completed_callable = get_exec_env(args.nproc)
-    if args.sat == 'satp3':
-        CTX_PATH3 = '/scratch/gpfs/SIMONSOBS/so/tracked/metadata/satp3/contexts/use_this_local.yaml'
-        ctx = core.Context(CTX_PATH3)
-        platform = 'satp3'
-    elif args.sat == 'satp1':
-        CTX_PATH1 = '/scratch/gpfs/SIMONSOBS/so/tracked/metadata/satp1/contexts/use_this_local.yaml'
-        ctx = core.Context(CTX_PATH1)
-        platform = 'satp1'
+    if args.test:
+        print('test mode: single process')
+        test()
     else:
-        raise ValueError('Platform not recognized, please use satp1 or satp3')
+        if args.sat == 'satp3':
+            CTX_PATH3 = '/scratch/gpfs/SIMONSOBS/so/tracked/metadata/satp3/contexts/use_this_local.yaml'
+            ctx = core.Context(CTX_PATH3)
+            platform = 'satp3'
+        elif args.sat == 'satp1':
+            CTX_PATH1 = '/scratch/gpfs/SIMONSOBS/so/tracked/metadata/satp1/contexts/use_this_local.yaml'
+            ctx = core.Context(CTX_PATH1)
+            platform = 'satp1'
+        else:
+            raise ValueError('Platform not recognized, please use satp1 or satp3')
 
-    if rank == 0:
-        main_multiprocess(executor, as_completed_callable, ctx, args.ys, args.ms, args.ye, args.me, platform=platform)
+        if rank == 0:
+            main_multiprocess(executor, as_completed_callable, ctx, args.ys, args.ms, args.ye, args.me, platform=platform)
         
     """
     import argparse

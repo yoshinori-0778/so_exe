@@ -11,7 +11,7 @@
 #SBATCH --mail-user=ys5857@princeton.edu
 
 # Log file for capturing the output of the script
-log=".log/vel_accl_satp1_multiprocess_260202.log"
+log="./logs/vel_accl_satp1_multiprocess_260202.log"
 
 #=========== Compute runtime parameters ============
 echo "Using ${NODES} node(s), which have ${NODE_SLOTS} thread slots each."
@@ -21,7 +21,7 @@ echo "Starting ${NODE_PROC} process(es) per node (${NPROC} total), each with ${P
 launch_str="srun --export=ALL"
 
 # Command to execute the Python script with the required arguments
-com="${launch_str} python3 /home/ys5857/workspace/jupyter/2025/10/exe/vel_accl.py \
+com="${launch_str} python3 /home/ys5857/workspace/script/so_exe/hkdata/vel_accl.py \
     2023 7 2026 2 --sat satp1 --nproc 14"
     
 
