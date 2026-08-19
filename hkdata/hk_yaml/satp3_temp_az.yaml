@@ -22,9 +22,9 @@ aliases:
     # PTC2(4K): https://site.simonsobs.org/grafana/d/ff99a9fa-707f-4fe7-8c06-09c94c0251b8/run-12-dashboard-rtmli-replacement?orgId=1&refresh=1m&viewPanel=3
     D2.1: 'cryo-ls240-lsa266v.temperatures.Channel_7_T'
     D2.2: 'cryo-ls240-lsa266v.temperatures.Channel_8_T'
-    D2.3: 'cryo-ls240-lsa266v.temperatures.Channel_1_T'
-    D2.4: 'cryo-ls240-lsa266v.temperatures.Channel_2_T'
-    D2.5: 'cryo-ls240-lsa266v.temperatures.Channel_3_T'
+    D2.3: 'cryo-ls240-lsa25b7.temperatures.Channel_1_T'
+    D2.4: 'cryo-ls240-lsa25b7.temperatures.Channel_2_T'
+    D2.5: 'cryo-ls240-lsa25b7.temperatures.Channel_3_T'
     D2.6: 'cryo-ls240-lsa25b7.temperatures.Channel_4_T'
     D2.7: 'cryo-ls240-lsa25b7.temperatures.Channel_7_T'
     #D2.9: 'cryo-bluefors.temperatures.lakeshore_ch2_t'
